@@ -89,6 +89,40 @@ High-level flow from start to finish:
   - Bet = **50** → SAFE at Level 1 to Level 3 → **Cash Out** at Level 3 → Restart Game → Credited `int(50 * 3.01) = 150`.
   - Net change vs Start of new round = `+150 - 50 = +100`.
 
+### Sample of Application User Interface
+| *Main Screen* |
+|:--:| 
+| <img src="images/main_screen.png" width="50%"> |
+
+| *Credits Screen* |
+|:--:| 
+| <img src="images/credits_screen.png" width="50%"> |
+
+| *Instructions Screen* |
+|:--:| 
+| <img src="images/instructions_screen.png" width="50%"> |
+
+| *Game Screen* |
+|:--:| 
+| <img src="images/game_screen.png" width="50%"> |
+
+| *Game Over Popup Screen* |
+|:--:| 
+| <img src="images/game_over_screen_1.png" width="50%"> |
+
+| *Tile Flipped Screen* |
+|:--:| 
+| <img src="images/game_over_screen_2.png" width="50%"> |
+
+| *Cash Out Screen* |
+|:--:| 
+| <img src="images/cash_out_screen.png" width="50%"> |
+
+| *Balance Reset Screen* |
+|:--:| 
+| <img src="images/balance_reset_screen.png" width="50%"> |
+  
+
 ## References
 - The code uses simple Bernoulli trials and fixed multipliers.
 
