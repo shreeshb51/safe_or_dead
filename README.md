@@ -1,6 +1,7 @@
 # SAFE or DEAD
 
 ## Project Description
+
 A mobile-friendly Kivy game where you bet coins and climb 8 riskier levels by selecting a safe tile each round. Cash out any time—or hit a DEAD tile and lose the bet.
 
 This project is a single-file Kivy application that implements a probability/pick game:
@@ -18,6 +19,7 @@ Core classes:
 - UI helpers: `RoundedButton`, `CustomPopup`, and `GameTile` (visual state: `hidden`, `safe`, `dead`).
 
 ## Table of Contents
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [Features](#features)
@@ -33,6 +35,7 @@ Core classes:
 ---
 
 ## Installation
+
 > **Note:** Kivy has platform-specific prerequisites (e.g., SDL2). Use the official Kivy install docs if you hit build/runtime issues. Commands below are placeholders—adjust per OS and Python version.
 
 1. **Install dependencies**
@@ -49,6 +52,7 @@ Core classes:
    - Android: consider `buildozer`.
 
 ## Usage
+
 Run the app:
 ```bash
 python main.py
@@ -62,6 +66,7 @@ In the game screen:
 5. **RESET** returns to the idle state; **Reset Balance** sets balance back to 100.
 
 ## Features
+
 - **8 levels**: Each with a fixed number of DEAD tiles: `[1, 1, 2, 2, 2, 3, 3, 4]`.
 - **Multipliers Per level**: `[1.23, 2.78, 3.01, 10.55, 26.83, 42.16, 69.69, 89.69]`.
 - **Cash Out**: At any time after level 1.
@@ -69,6 +74,7 @@ In the game screen:
 - **Resolution**: preset for a mobile-like portrait window.
 
 ## Methodology
+
 High-level flow from start to finish:
 1. **App setup**: `SafeOrDeadApp.build()` creates a `ScreenManager` and registers screens.
 2. **Enter Bet → Start Game**:
@@ -85,11 +91,13 @@ High-level flow from start to finish:
 5. **Reset / Restart**: Clears scheduled callbacks, resets tiles and visual state, re-enables inputs.
 
 ## Examples
+
 - **Quick Example**:
   - Bet = **50** → SAFE at Level 1 to Level 3 → **Cash Out** at Level 3 → Restart Game → Credited `int(50 * 3.01) = 150`.
   - Net change vs Start of new round = `+150 - 50 = +100`.
 
 ### Sample of Application User Interface
+
 | *Main Screen* |
 |:--:| 
 | <img src="images/main_screen.png" width="50%"> |
@@ -123,15 +131,18 @@ High-level flow from start to finish:
 | <img src="images/balance_reset_screen.png" width="50%"> |
 
 ## References
+
 - The code uses simple Bernoulli trials and fixed multipliers.
 
 ## Dependencies
+
 - **Python**: 3.8+
 - **Kivy**
 - **Standard libraries**: `random`, `enum`
 - (Asset) `button_click.wav`
 
 ## Algorithms/Mathematical Concepts Used
+
 At level *i*, there are 5 tiles with `dead_i` DEAD tiles. Picking one uniformly at random gives
 
 $$p_i = \frac{5 - \text{dead}_i}{5}$$
@@ -162,12 +173,15 @@ Given the code’s parameters:
 > With these values, cashing out around **level 5** maximizes EV; the final jackpot level is **negative EV**. Tweak the multiplier table if you want a particular house edge.
 
 ## License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Acknowledgments
+
 - Kivy authors and community.
 - WavSource.com
 
 ## Note
+
 | AI was used to generate most of the docstrings and inline comments in the code. |
 |:--:|
