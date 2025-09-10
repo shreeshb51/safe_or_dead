@@ -121,7 +121,6 @@ High-level flow from start to finish:
 | *Balance Reset Screen* |
 |:--:| 
 | <img src="images/balance_reset_screen.png" width="50%"> |
-  
 
 ## References
 - The code uses simple Bernoulli trials and fixed multipliers.
